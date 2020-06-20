@@ -50,7 +50,7 @@ def get_drinks():
 '''
 @app.route('/drinks-detail')
 @requires_auth('get:drinks-detail')
-def get_drinks_detail(token):
+def get_drinks_detail(jwt):
     try:
         drinks = Drink.query.all()
         list_drinks_detail = [drink.long() for drink in drinks]
